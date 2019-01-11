@@ -23,9 +23,11 @@ if [ $# -ge 1 ]; then
       -DCMAKE_PREFIX_PATH="${BUILDDIR}" \
       -DPXR_INSTALL_LOCATION="$HOME/Library/Pixar/USD_maya/local/third_party/maya/plugin/" \
       -DPXR_BUILD_MAYA_PLUGIN=1 \
+      -DPXR_BUILD_EMBREE_PLUGIN=1 \
       -DPXR_BUILD_IMAGING=1 -DPXR_BUILD_USD_IMAGING=1 \
       -DPXR_BUILD_ALEMBIC_PLUGIN=0 \
       -DMAYA_LOCATION=/Applications/Autodesk/maya2017 \
+      -DEMBREE_LOCATION=/Application/Embree2 \
       -DTBB_LIBRARY=/Applications/Autodesk/maya2017/Maya.app/Contents/MacOS \
       -DTBB_LIBRARIES=/Applications/Autodesk/maya2017/Maya.app/Contents/MacOS \
       -DMAYA_tbb_LIBRARY=/Applications/Autodesk/maya2017/Maya.app/Contents/MacOS \
@@ -47,7 +49,7 @@ if [ $# -ge 1 ]; then
       -DPTEX_LOCATION="${BUILDDIR}" \
       -DBoost_INCLUDE_DIR="${BUILDDIR}/include" -DBoost_LIBRARY_DIR="${BUILDDIR}/lib" \
       -G Xcode
-    exit 0 
+    exit 0
   fi
   if [[ "$1" = "Xcode" ]]; then
     echo "Configuring for Xcode"

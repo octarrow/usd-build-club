@@ -30,6 +30,11 @@ git checkout 830608b
 cd ..
 
 mkdir -p build/png; cd build/png
+
+export CFLAGS="-isysroot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+export CXXFLAGS="-isysroot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+export LDFLAGS="-Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+
 cmake \
       -DCMAKE_PREFIX_PATH="${LOCAL}" \
       -DCMAKE_INSTALL_PREFIX="${LOCAL}" \
